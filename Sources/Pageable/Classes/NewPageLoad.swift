@@ -14,11 +14,16 @@ public protocol NewPageLoad: class {
 }
 
 extension UITableView: NewPageLoad {
-
+    
     public func insertAndUpdateRows(new: [IndexPath]) {
-        self.performBatchUpdates({
+        
+        if #available(iOS 11.0, *) {
+            self.performBatchUpdates({
+                self.insertRows(at: new, with: .none)
+            }, completion: nil)
+        } else {
             self.insertRows(at: new, with: .none)
-        }, completion: nil)
+        }
 
         if let visible = self.indexPathsForVisibleRows {
             let intersection = Set(new).intersection(Set(visible))
@@ -32,9 +37,13 @@ extension UITableView: NewPageLoad {
         if reload {
             self.reloadData()
         }
-        refreshControl?.endRefreshing()
+        
+        if #available(iOS 10.0, *) {
+            refreshControl?.endRefreshing()
+        }
     }
 
+    @available(iOS 10.0, *)
     public func setupRefreshControl(_ target: Any?, selector: Selector) {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(target, action: selector, for: .valueChanged)
@@ -60,14 +69,16 @@ extension UICollectionView: NewPageLoad {
         if reload {
             self.reloadData()
         }
-        refreshControl?.endRefreshing()
+        if #available(iOS 10.0, *) {
+            refreshControl?.endRefreshing()
+        }
     }
 
+    @available(iOS 10.0, *)
     public func setupRefreshControl(_ target: Any?, selector: Selector) {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(target, action: selector, for: .valueChanged)
         refreshControl.beginRefreshing()
         self.refreshControl = refreshControl
     }
-
 }

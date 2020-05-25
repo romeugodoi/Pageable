@@ -1,5 +1,5 @@
 PODS:
-  - Pageable (0.1.0)
+  - Pageable (1.0.1)
 
 DEPENDENCIES:
   - Pageable (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Pageable: c7ece233701f13447b7889c7bffb7359fff6a957
+  Pageable: 3332ef90d660894718b5ac77547440a8891e78de
 
 PODFILE CHECKSUM: 201e0c1e472870f80b88c4e456762ae5b96a6340
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.8.4

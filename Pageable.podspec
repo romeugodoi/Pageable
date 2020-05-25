@@ -22,19 +22,19 @@ A lot of the time, when we’re making calls to REST API, there’ll be a lot of
 Pageable provide support for incorprating pagination in easy way. With pageable, pagination logic gets seperate from Tableview or CollectionView controllers.
                        DESC
 
-  s.homepage         = 'https://github.com/mrigankgupta/Pageable'
+  s.homepage         = 'https://github.com/romeugodoi/Pageable'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'mrigankgupta' => 'mrigankgupta@gmail.com' }
-  s.source           = { :git => 'https://github.com/mrigankgupta/Pageable.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/romeugodoi/Pageable.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/@mrigankgupta'
 
   s.ios.deployment_target = '11.0'
   #s.swift_version = '5.0'
-  s.source_files = 'Pageable/Classes/**/*'
+  s.source_files = 'Sources/Pageable/Classes/**/*'
   
   # s.resource_bundles = {
-  #   'Pageable' => ['Pageable/Assets/*.png']
+  #   'Pageable' => ['Sources/Pageable/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
